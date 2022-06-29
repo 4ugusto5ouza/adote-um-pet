@@ -31,7 +31,6 @@ export const Header = () => {
         <Button colorScheme={"orange"} size={"sm"} borderRadius={"20px"}>
           Anunciar
         </Button>
-        {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
       </HStack>
     </Box>
   );
