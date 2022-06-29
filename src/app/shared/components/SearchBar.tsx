@@ -12,7 +12,7 @@ export const SearchBar = () => {
           borderRadius={"4px"}
         />
       </FormControl>
-      <Button rightIcon={<SearchIcon w={"25px"} paddingRight={"8px"} />} size={"sm"} paddingX={"5px"}></Button>
+      <Button rightIcon={<SearchIcon w={"25px"} paddingRight={"8px"} />} size={"sm"} paddingX={"5px"} colorScheme={"linkedin"}></Button>
     </Stack>
   );
 };

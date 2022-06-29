@@ -1,8 +1,10 @@
 import { Avatar, Box, Button, HStack, Spacer, Text } from "@chakra-ui/react";
-import { NavBar } from "./Navbar";
+import { useNavigate } from "react-router-dom";
+import { NavBar } from "./NavBar";
 import { SearchBar } from "./SearchBar";
 
 export const Header = () => {
+  const navigate = useNavigate();
   return (
     <Box w={"100%"} boxShadow={"base"} h={"52px"}>
       <HStack
@@ -13,7 +15,12 @@ export const Header = () => {
         w={"90%"}
         alignItems={"center"}
       >
-        <Text fontSize={"16px"} fontWeight={"600"} marginRight={"10px"}>
+        <Text
+          fontSize={"16px"}
+          fontWeight={"600"}
+          marginRight={"10px"}
+          onClick={() => navigate("/")}
+        >
           Adote1Pet
         </Text>
         <SearchBar />
