@@ -6,10 +6,10 @@ import { SearchBar } from "./SearchBar";
 export const Header = () => {
   const navigate = useNavigate();
   return (
-    <Box w={"100%"} boxShadow={"base"} h={"52px"}>
+    <Box w={"100%"} boxShadow={"base"} h={"52px"} mb={"10px"}>
       <HStack
         h={"100%"}
-        marginX={"40px"}
+        maxWidth={"1900px"}
         margin={"auto"}
         direction={"row"}
         w={"90%"}

@@ -1,4 +1,5 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
+import { Flex } from "@chakra-ui/react";
 const GET_TODOS_QUERY = gql`
   query {
     todos {
@@ -65,5 +66,5 @@ export const Home = () => {
   const todos = data?.todos;
   console.log(todos);
 
-  return <div>Home</div>;
+  return <Flex height={"100%"}>Home</Flex>;
 };
