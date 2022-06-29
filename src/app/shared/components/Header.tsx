@@ -16,7 +16,7 @@ export const Header = () => {
         alignItems={"center"}
       >
         <Text
-          fontSize={"16px"}
+          fontSize={"24px"}
           fontWeight={"600"}
           marginRight={"10px"}
           onClick={() => navigate("/")}
