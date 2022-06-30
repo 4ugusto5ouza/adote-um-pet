@@ -4,6 +4,7 @@ import {
   Button,
   Flex,
   Icon,
+  IconButton,
   Image,
   Modal,
   ModalBody,
@@ -14,6 +15,7 @@ import {
   ModalOverlay,
   Spacer,
   Text,
+  Tooltip,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
@@ -23,9 +25,11 @@ import {
   FaFacebookSquare,
   FaPhoneSquareAlt,
   FaRegNewspaper,
+  FaShareAlt,
 } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdFavorite } from "react-icons/md";
 import { ChatIcon } from "@chakra-ui/icons";
+import { ImBlocked } from "react-icons/im";
 
 export const DetallhesAnuncio = () => {
   const { Id } = useParams();
@@ -73,20 +77,58 @@ export const DetallhesAnuncio = () => {
                   lacinia massa mi quis velit. Vestibulum ac velit sit amet
                   sapien rutrum pharetra.
                 </Text>
-                <Flex direction={"row"} gap={6} alignItems={"flex-end"} justifyContent={"flex-end"} width={"100%"}>
-                  <Icon
-                    as={FaPhoneSquareAlt}
-                    color={"gray"}
-                    w={"25px"}
-                    h={"25px"}
-                  />
-                  <Icon as={MdEmail} w={"25px"} color={"gray"} h={"25px"} />
-                  <Icon
-                    as={FaFacebookSquare}
-                    color={"gray"}
-                    w={"25px"}
-                    h={"25px"}
-                  />
+                <Flex
+                  direction={"row"}
+                  gap={6}
+                  alignItems={"flex-end"}
+                  justifyContent={"flex-end"}
+                  width={"100%"}
+                >
+                  <Tooltip
+                    hasArrow
+                    label="Denunciar"
+                    bg="gray.300"
+                    color="black"
+                  >
+                    <IconButton
+                      size={"xl"}
+                      variant={"link"}
+                      colorScheme={"dark"}
+                      aria-label="Denunciar"
+                      icon={<ImBlocked />}
+                      borderRadius={"50%"}
+                    />
+                  </Tooltip>
+                  <Tooltip
+                    hasArrow
+                    label="Compartilhar"
+                    bg="gray.300"
+                    color="black"
+                  >
+                    <IconButton
+                      size={"xl"}
+                      variant={"link"}
+                      colorScheme={"dark"}
+                      aria-label="Compartilhar"
+                      icon={<FaShareAlt />}
+                      borderRadius={"50%"}
+                    />
+                  </Tooltip>
+                  <Tooltip
+                    hasArrow
+                    label="Favoritar"
+                    bg="gray.300"
+                    color="black"
+                  >
+                    <IconButton
+                      size={"xl"}
+                      variant={"link"}
+                      colorScheme={"dark"}
+                      aria-label="Favoritar"
+                      icon={<MdFavorite />}
+                      borderRadius={"50%"}
+                    />
+                  </Tooltip>
                 </Flex>
               </VStack>
               <Spacer />

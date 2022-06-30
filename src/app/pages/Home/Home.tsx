@@ -182,20 +182,54 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+        </GridItem><GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
             border={"1px solid #bababa"}
             borderRadius={"15px"}
@@ -216,26 +250,54 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<ImBlocked />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+        </GridItem><GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
             border={"1px solid #bababa"}
             borderRadius={"15px"}
@@ -256,20 +318,54 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+        </GridItem><GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
             border={"1px solid #bababa"}
             borderRadius={"15px"}
@@ -290,20 +386,54 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+        </GridItem><GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
             border={"1px solid #bababa"}
             borderRadius={"15px"}
@@ -324,20 +454,54 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+        </GridItem><GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
             border={"1px solid #bababa"}
             borderRadius={"15px"}
@@ -358,20 +522,54 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+        </GridItem><GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
             border={"1px solid #bababa"}
             borderRadius={"15px"}
@@ -392,16 +590,51 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton
-                size={"md"}
-                colorScheme={"blue"}
-                aria-label="Ver mais"
-                icon={<AddIcon />}
-                borderRadius={"50%"}
-              />
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={() => navigate(`/detalhes/${1}`)}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
             </Flex>
           </Flex>
         </GridItem>
