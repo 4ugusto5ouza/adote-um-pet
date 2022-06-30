@@ -19,6 +19,7 @@ export const Header = () => {
           fontSize={"24px"}
           fontWeight={"600"}
           marginRight={"10px"}
+          cursor={"pointer"}
           onClick={() => navigate("/")}
         >
           Adote1Pet

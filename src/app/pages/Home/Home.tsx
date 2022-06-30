@@ -1,5 +1,8 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { AddIcon } from "@chakra-ui/icons";
+import { ImBlocked } from "react-icons/im";
+import { FaShareAlt } from "react-icons/fa";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import {
   Box,
   Button,
@@ -9,8 +12,11 @@ import {
   IconButton,
   Image,
   Text,
+  Tooltip,
+  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import { DetallhesAnuncio } from "./DetallhesAnuncio";
 
 const GET_TODOS_QUERY = gql`
   query {
@@ -73,19 +79,17 @@ type TodoProps = {
 };
 
 export const Home = () => {
-
   // const { data } = useQuery<{ todos: TodoProps[] }>(GET_TODOS_QUERY);
   // const todos = data?.todos;
   // console.log(todos);
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <Box
-      width={"90%"}
-      height={"100%"}
-      marginX={"auto"}
-      padding={"10px"}
-    >
-      <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>Publicações recentes</Text>
+    <Box width={"90%"} height={"100%"} marginX={"auto"} padding={"10px"}>
+      <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>
+        Publicações recentes
+      </Text>
       <Grid templateColumns="repeat(4, 1fr)" gap={6}>
         <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
           <Flex
@@ -108,7 +112,82 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
+              <Tooltip hasArrow label="Ver mais" bg="gray.300" color="black">
+                <IconButton
+                  size={"md"}
+                  colorScheme={"blue"}
+                  aria-label="Ver mais"
+                  icon={<AddIcon />}
+                  borderRadius={"50%"}
+                  onClick={onOpen}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Denunciar"
+                  icon={<ImBlocked />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip
+                hasArrow
+                label="Compartilhar"
+                bg="gray.300"
+                color="black"
+              >
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Compartilhar"
+                  icon={<FaShareAlt />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+              <Tooltip hasArrow label="Favoritar" bg="gray.300" color="black">
+                <IconButton
+                  size={"xl"}
+                  variant={"link"}
+                  colorScheme={"dark"}
+                  aria-label="Favoritar"
+                  icon={<MdFavorite />}
+                  borderRadius={"50%"}
+                />
+              </Tooltip>
+            </Flex>
+          </Flex>
+        </GridItem>
+        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+          <Flex
+            border={"1px solid #bababa"}
+            borderRadius={"15px"}
+            w={"100%"}
+            h={"100%"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            padding={"10px"}
+            direction={"column"}
+          >
+            <Text>Meu título</Text>
+            <Image
+              boxSize="80%"
+              borderRadius={"15px"}
+              objectFit="cover"
+              src="https://bit.ly/dan-abramov"
+              alt="Dan Abramov"
+              marginTop={"5px"}
+            />
+            <Flex direction={"row"} marginTop={"10px"} gap={6}>
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
               <Button size={"sm"}>D</Button>
               <Button size={"sm"}>C</Button>
               <Button size={"sm"}>F</Button>
@@ -136,7 +215,53 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<ImBlocked />}
+                borderRadius={"50%"}
+              />
+              <Button size={"sm"}>C</Button>
+              <Button size={"sm"}>F</Button>
+            </Flex>
+          </Flex>
+        </GridItem>
+        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
+          <Flex
+            border={"1px solid #bababa"}
+            borderRadius={"15px"}
+            w={"100%"}
+            h={"100%"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            padding={"10px"}
+            direction={"column"}
+          >
+            <Text>Meu título</Text>
+            <Image
+              boxSize="80%"
+              borderRadius={"15px"}
+              objectFit="cover"
+              src="https://bit.ly/dan-abramov"
+              alt="Dan Abramov"
+              marginTop={"5px"}
+            />
+            <Flex direction={"row"} marginTop={"10px"} gap={6}>
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
               <Button size={"sm"}>D</Button>
               <Button size={"sm"}>C</Button>
               <Button size={"sm"}>F</Button>
@@ -164,7 +289,13 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
               <Button size={"sm"}>D</Button>
               <Button size={"sm"}>C</Button>
               <Button size={"sm"}>F</Button>
@@ -192,7 +323,13 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
               <Button size={"sm"}>D</Button>
               <Button size={"sm"}>C</Button>
               <Button size={"sm"}>F</Button>
@@ -220,7 +357,13 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
               <Button size={"sm"}>D</Button>
               <Button size={"sm"}>C</Button>
               <Button size={"sm"}>F</Button>
@@ -248,63 +391,13 @@ export const Home = () => {
               marginTop={"5px"}
             />
             <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
-            </Flex>
-          </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
-          <Flex
-            border={"1px solid #bababa"}
-            borderRadius={"15px"}
-            w={"100%"}
-            h={"100%"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            padding={"10px"}
-            direction={"column"}
-          >
-            <Text>Meu título</Text>
-            <Image
-              boxSize="80%"
-              borderRadius={"15px"}
-              objectFit="cover"
-              src="https://bit.ly/dan-abramov"
-              alt="Dan Abramov"
-              marginTop={"5px"}
-            />
-            <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
-              <Button size={"sm"}>D</Button>
-              <Button size={"sm"}>C</Button>
-              <Button size={"sm"}>F</Button>
-            </Flex>
-          </Flex>
-        </GridItem>
-        <GridItem w="100%" h="100%" bgColor={"#fdfdfd"}>
-          <Flex
-            border={"1px solid #bababa"}
-            borderRadius={"15px"}
-            w={"100%"}
-            h={"100%"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            padding={"10px"}
-            direction={"column"}
-          >
-            <Text>Meu título</Text>
-            <Image
-              boxSize="80%"
-              borderRadius={"15px"}
-              objectFit="cover"
-              src="https://bit.ly/dan-abramov"
-              alt="Dan Abramov"
-              marginTop={"5px"}
-            />
-            <Flex direction={"row"} marginTop={"10px"} gap={6}>
-              <IconButton size={"md"} colorScheme={"blue"} aria-label="Ver mais" icon={<AddIcon/>} borderRadius={"50%"} />            
+              <IconButton
+                size={"md"}
+                colorScheme={"blue"}
+                aria-label="Ver mais"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+              />
               <Button size={"sm"}>D</Button>
               <Button size={"sm"}>C</Button>
               <Button size={"sm"}>F</Button>
@@ -312,6 +405,7 @@ export const Home = () => {
           </Flex>
         </GridItem>
       </Grid>
+      <DetallhesAnuncio isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
     </Box>
   );
 };
