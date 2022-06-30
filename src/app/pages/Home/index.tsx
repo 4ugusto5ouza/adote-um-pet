@@ -11,6 +11,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+
 const GET_TODOS_QUERY = gql`
   query {
     todos {
@@ -72,10 +73,10 @@ type TodoProps = {
 };
 
 export const Home = () => {
-  const { data } = useQuery<{ todos: TodoProps[] }>(GET_TODOS_QUERY);
 
-  const todos = data?.todos;
-  console.log(todos);
+  // const { data } = useQuery<{ todos: TodoProps[] }>(GET_TODOS_QUERY);
+  // const todos = data?.todos;
+  // console.log(todos);
 
   return (
     <Box
