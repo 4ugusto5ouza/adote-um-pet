@@ -17,6 +17,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { DetallhesAnuncio } from "./DetallhesAnuncio";
+import { useNavigate } from "react-router-dom";
 
 const GET_TODOS_QUERY = gql`
   query {
@@ -83,7 +84,7 @@ export const Home = () => {
   // const todos = data?.todos;
   // console.log(todos);
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
 
   return (
     <Box width={"90%"} height={"100%"} marginX={"auto"} padding={"10px"}>
@@ -119,7 +120,7 @@ export const Home = () => {
                   aria-label="Ver mais"
                   icon={<AddIcon />}
                   borderRadius={"50%"}
-                  onClick={onOpen}
+                  onClick={() => navigate(`/detalhes/${1}`)}
                 />
               </Tooltip>
               <Tooltip hasArrow label="Denunciar" bg="gray.300" color="black">
@@ -405,7 +406,6 @@ export const Home = () => {
           </Flex>
         </GridItem>
       </Grid>
-      <DetallhesAnuncio isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
     </Box>
   );
 };
