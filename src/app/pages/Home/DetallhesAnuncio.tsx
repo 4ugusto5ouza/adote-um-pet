@@ -57,7 +57,6 @@ export const DetallhesAnuncio = () => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Título do anúncio</ModalHeader>
-          {/* <ModalCloseButton size={"sm"}/> */}
           <ModalBody>
             <Flex direction={"row"} h={"500px"}>
               <VStack margin={"15px"} width={"45%"}>
@@ -70,13 +69,6 @@ export const DetallhesAnuncio = () => {
                   src="https://bit.ly/dan-abramov"
                   alt="Dan Abramov"
                 />
-                <Text textAlign={"justify"}>
-                  Minha descrição Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Aliquam et pretium lectus. Suspendisse
-                  varius, ex ac tempor semper, ipsum dolor tristique magna, vel
-                  lacinia massa mi quis velit. Vestibulum ac velit sit amet
-                  sapien rutrum pharetra.
-                </Text>
                 <Flex
                   direction={"row"}
                   gap={6}
@@ -84,60 +76,54 @@ export const DetallhesAnuncio = () => {
                   justifyContent={"flex-end"}
                   width={"100%"}
                 >
-                  <Tooltip
-                    hasArrow
-                    label="Denunciar"
-                    bg="gray.300"
-                    color="black"
-                  >
-                    <IconButton
-                      size={"xl"}
-                      variant={"link"}
-                      colorScheme={"dark"}
-                      aria-label="Denunciar"
-                      icon={<ImBlocked />}
-                      borderRadius={"50%"}
-                    />
-                  </Tooltip>
-                  <Tooltip
-                    hasArrow
-                    label="Compartilhar"
-                    bg="gray.300"
-                    color="black"
-                  >
-                    <IconButton
-                      size={"xl"}
-                      variant={"link"}
-                      colorScheme={"dark"}
-                      aria-label="Compartilhar"
-                      icon={<FaShareAlt />}
-                      borderRadius={"50%"}
-                    />
-                  </Tooltip>
-                  <Tooltip
-                    hasArrow
-                    label="Favoritar"
-                    bg="gray.300"
-                    color="black"
-                  >
-                    <IconButton
-                      size={"xl"}
-                      variant={"link"}
-                      colorScheme={"dark"}
-                      aria-label="Favoritar"
-                      icon={<MdFavorite />}
-                      borderRadius={"50%"}
-                    />
-                  </Tooltip>
+                  <Flex width={"10%"} gap={3} marginRight={"60px"}>
+                    <Tooltip
+                      hasArrow
+                      label="Denunciar"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <IconButton
+                        size={"xl"}
+                        variant={"link"}
+                        colorScheme={"dark"}
+                        aria-label="Denunciar"
+                        icon={<ImBlocked />}
+                        borderRadius={"50%"}
+                      />
+                    </Tooltip>
+                    <Tooltip
+                      hasArrow
+                      label="Compartilhar"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <IconButton
+                        size={"xl"}
+                        variant={"link"}
+                        colorScheme={"dark"}
+                        aria-label="Compartilhar"
+                        icon={<FaShareAlt />}
+                        borderRadius={"50%"}
+                      />
+                    </Tooltip>
+                    <Tooltip
+                      hasArrow
+                      label="Favoritar"
+                      bg="gray.300"
+                      color="black"
+                    >
+                      <IconButton
+                        size={"xl"}
+                        variant={"link"}
+                        colorScheme={"dark"}
+                        aria-label="Favoritar"
+                        icon={<MdFavorite />}
+                        borderRadius={"50%"}
+                      />
+                    </Tooltip>
+                  </Flex>
                 </Flex>
-              </VStack>
-              <Spacer />
-              <VStack
-                margin={"15px"}
-                width={"45%"}
-                border={"1px"}
-                padding={"10px"}
-              >
                 <Box>
                   <Text>Publicado por Suzane Vieira</Text>
                   <Flex direction={"row"} marginTop={"18px"}>
@@ -170,7 +156,7 @@ export const DetallhesAnuncio = () => {
                       </Flex>
                     </Flex>
                   </Flex>
-                  <Flex direction={"row"} gap={6} marginTop={"80%"}>
+                  <Flex direction={"row"} gap={6} marginTop={"8%"}>
                     <Button leftIcon={<FaRegNewspaper />} size={"sm"}>
                       Todos os anúncios
                     </Button>
@@ -180,6 +166,22 @@ export const DetallhesAnuncio = () => {
                     </Button>
                   </Flex>
                 </Box>
+              </VStack>
+              <Spacer />
+              <VStack
+                margin={"15px"}
+                width={"45%"}
+                border={"1px"}
+                padding={"30px"}
+              >
+                <Text fontWeight={700} fontSize={"1em"}>Descrição</Text>
+                <Text textAlign={"justify"}>
+                  Minha descrição Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Aliquam et pretium lectus. Suspendisse
+                  varius, ex ac tempor semper, ipsum dolor tristique magna, vel
+                  lacinia massa mi quis velit. Vestibulum ac velit sit amet
+                  sapien rutrum pharetra.
+                </Text>
               </VStack>
             </Flex>
           </ModalBody>
