@@ -8,7 +8,6 @@ import {
   Image,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
@@ -31,7 +30,7 @@ import { MdEmail, MdFavorite } from "react-icons/md";
 import { ChatIcon } from "@chakra-ui/icons";
 import { ImBlocked } from "react-icons/im";
 
-export const DetallhesAnuncio = () => {
+export const DetalhesAnuncio = () => {
   const { Id } = useParams();
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
