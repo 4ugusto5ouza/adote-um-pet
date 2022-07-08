@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import { AddMeuAnuncio } from "../pages/meus-anuncios/AddMeuAnuncio";
 import { DetalhesAnuncio } from "../pages/home/DetalhesAnuncio";
 import { Home } from "../pages/home/Home";
-import { AddMeuAnuncio } from "../pages/meus-anuncios/AddMeuAnuncio";
 import { DeleteMeuAnuncio } from "../pages/meus-anuncios/DeleteMeuAnuncio";
 import { EditMeuAnuncio } from "../pages/meus-anuncios/EditMeuAnuncio";
 import { MeusAnuncios } from "../pages/meus-anuncios/MeusAnuncios";
