@@ -94,7 +94,7 @@ export const AddMeuAnuncio = () => {
   };
 
   const criarAnuncio = (anuncio: anuncioProps) => {
-    debugger;
+    return;
     createAnuncio({
       variables: {
         tituloAnuncio: anuncio.titulo,
@@ -106,7 +106,6 @@ export const AddMeuAnuncio = () => {
         vacinado: anuncio.vacinado,
       },
       onCompleted(data) {
-        debugger;
         publishAnuncio({
           variables: {
             id: data.createAnuncio.id,
