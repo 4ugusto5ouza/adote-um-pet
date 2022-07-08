@@ -94,7 +94,6 @@ export const AddMeuAnuncio = () => {
   };
 
   const criarAnuncio = (anuncio: anuncioProps) => {
-    return;
     createAnuncio({
       variables: {
         tituloAnuncio: anuncio.titulo,

@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_ANUNCIOS_QUERY = gql`
-  query {
+  query GetAnuncios{
     anuncios {
       id
       tituloAnuncio
@@ -40,6 +40,14 @@ export const CREATE_ANUNCIO_MUTATION = gql`
 export const PUBLISH_ANUNCIO_MUTATION = gql`
   mutation PublishAnuncio($id: ID!) {
     publishAnuncio(where: { id: $id }, to: PUBLISHED) {
+      id
+    }
+  }
+`;
+
+export const DELETE_ANUNCIO_MUTATION = gql`
+  mutation DeleteAnuncio($id: ID!) {
+    deleteAnuncio(where: { id: $id }) {
       id
     }
   }
