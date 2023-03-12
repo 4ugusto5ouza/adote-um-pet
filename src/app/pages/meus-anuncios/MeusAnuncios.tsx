@@ -30,9 +30,12 @@ export const MeusAnuncios = () => {
 
   const [anuncios, setAnuncios] = useState<anuncioProps[]>([]);
 
-  const { data } = useQuery<{ anuncios: anuncioProps[] }>(GET_ANUNCIOS_QUERY, {
-    fetchPolicy: "no-cache",
-  });
+  const { loading, error, data } = useQuery<{ anuncios: anuncioProps[] }>(
+    GET_ANUNCIOS_QUERY,
+    {
+      fetchPolicy: "no-cache",
+    }
+  );
 
   useEffect(() => {
     const response = data?.anuncios as anuncioProps[];
@@ -58,78 +61,107 @@ export const MeusAnuncios = () => {
       padding={"10px"}
       position={"relative"}
     >
-      <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>
-        Meus anúncios
-      </Text>
-      <Flex width={"100%"} margin={"-15px"} justifyContent={"flex-end"} gap={6}>
-        <Tooltip hasArrow label="Adicionar" bg="gray.300" color="black">
-          <IconButton
-            size={"lg"}
-            colorScheme={"blue"}
-            aria-label="Adicionar"
-            icon={<AddIcon />}
-            borderRadius={"50%"}
-            onClick={() => navigate(`/adicionar/meu-anuncio`)}
+      {loading ? (
+        <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>
+          Loading...
+        </Text>
+      ) : (
+        <>
+          <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>
+            Meus anúncios
+          </Text>
+
+          <Flex
+            width={"100%"}
+            margin={"-15px"}
+            justifyContent={"flex-end"}
+            gap={6}
+          >
+            <Tooltip hasArrow label="Adicionar" bg="gray.300" color="black">
+              <IconButton
+                size={"lg"}
+                colorScheme={"blue"}
+                aria-label="Adicionar"
+                icon={<AddIcon />}
+                borderRadius={"50%"}
+                onClick={() => navigate(`/adicionar/meu-anuncio`)}
+              />
+            </Tooltip>
+          </Flex>
+          <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+            {anuncios &&
+              anuncios?.map((anuncio) => (
+                <GridItem
+                  w="100%"
+                  h="100%"
+                  bgColor={"#fdfdfd"}
+                  key={anuncio.id}
+                >
+                  <Flex
+                    border={"1px solid #bababa"}
+                    borderRadius={"xl"}
+                    w={"100%"}
+                    h={"100%"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    padding={"10px"}
+                    direction={"column"}
+                  >
+                    <Text>{anuncio.tituloAnuncio}</Text>
+                    <Image
+                      boxSize="80%"
+                      borderRadius={"xl"}
+                      objectFit="cover"
+                      src={`${anuncio.base64Capa}`}
+                      alt={`${anuncio.altImgCapa}`}
+                      marginTop={"5px"}
+                    />
+                    <Flex direction={"row"} marginTop={"10px"} gap={6}>
+                      <Tooltip
+                        hasArrow
+                        label="Editar"
+                        bg="gray.300"
+                        color="black"
+                      >
+                        <IconButton
+                          size={"sm"}
+                          colorScheme={"orange"}
+                          aria-label="Editar"
+                          icon={<EditIcon />}
+                          borderRadius={"50%"}
+                          onClick={() => navigate(`/detalhes/${1}`)}
+                        />
+                      </Tooltip>
+                      <Tooltip
+                        hasArrow
+                        label="Deletar"
+                        bg="gray.300"
+                        color="black"
+                      >
+                        <IconButton
+                          size={"sm"}
+                          colorScheme={"red"}
+                          aria-label="Deletar"
+                          icon={<DeleteIcon />}
+                          borderRadius={"50%"}
+                          onClick={() => handleDelete(anuncio)}
+                        />
+                      </Tooltip>
+                    </Flex>
+                  </Flex>
+                </GridItem>
+              ))}
+          </Grid>
+          <DeleteMeuAnuncio
+            isOpen={isOpen}
+            onOpen={onOpen}
+            onClose={onClose}
+            anuncio={anuncioDel}
+            anuncios={anuncios}
+            setAnuncio={setAnuncios}
           />
-        </Tooltip>
-      </Flex>
-      <Grid templateColumns="repeat(4, 1fr)" gap={6}>
-        {anuncios &&
-          anuncios?.map((anuncio) => (
-            <GridItem w="100%" h="100%" bgColor={"#fdfdfd"} key={anuncio.id}>
-              <Flex
-                border={"1px solid #bababa"}
-                borderRadius={"xl"}
-                w={"100%"}
-                h={"100%"}
-                alignItems={"center"}
-                justifyContent={"center"}
-                padding={"10px"}
-                direction={"column"}
-              >
-                <Text>{anuncio.tituloAnuncio}</Text>
-                <Image
-                  boxSize="80%"
-                  borderRadius={"xl"}
-                  objectFit="cover"
-                  src={`${anuncio.base64Capa}`}
-                  alt={`${anuncio.altImgCapa}`}
-                  marginTop={"5px"}
-                />
-                <Flex direction={"row"} marginTop={"10px"} gap={6}>
-                  <Tooltip hasArrow label="Editar" bg="gray.300" color="black">
-                    <IconButton
-                      size={"sm"}
-                      colorScheme={"orange"}
-                      aria-label="Editar"
-                      icon={<EditIcon />}
-                      borderRadius={"50%"}
-                      onClick={() => navigate(`/detalhes/${1}`)}
-                    />
-                  </Tooltip>
-                  <Tooltip hasArrow label="Deletar" bg="gray.300" color="black">
-                    <IconButton
-                      size={"sm"}
-                      colorScheme={"red"}
-                      aria-label="Deletar"
-                      icon={<DeleteIcon />}
-                      borderRadius={"50%"}
-                      onClick={() => handleDelete(anuncio)}
-                    />
-                  </Tooltip>
-                </Flex>
-              </Flex>
-            </GridItem>
-          ))}
-      </Grid>
-      <DeleteMeuAnuncio
-        isOpen={isOpen}
-        onOpen={onOpen}
-        onClose={onClose}
-        anuncio={anuncioDel}
-        anuncios={anuncios}
-        setAnuncio={setAnuncios}
-      />
+        </>
+      )}
     </Box>
   );
 };

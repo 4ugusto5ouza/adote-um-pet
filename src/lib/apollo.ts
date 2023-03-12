@@ -1,4 +1,9 @@
-import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql,
+} from "@apollo/client";
 
 export const client = new ApolloClient({
   uri: import.meta.env.VITE_API_BASE_URL,
@@ -29,8 +34,6 @@ export const CREATE_TODO_MUTATION = gql`
     }
   }
 `;
-
-
 
 export const PUBLISH_TODO_MUTATION = gql`
   mutation PublishTodo($id: ID!) {
