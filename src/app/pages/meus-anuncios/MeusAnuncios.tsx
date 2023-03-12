@@ -30,12 +30,14 @@ export const MeusAnuncios = () => {
 
   const [anuncios, setAnuncios] = useState<anuncioProps[]>([]);
 
-  const { data } = useQuery<{ anuncios: anuncioProps[] }>(GET_ANUNCIOS_QUERY);
+  const { data } = useQuery<{ anuncios: anuncioProps[] }>(GET_ANUNCIOS_QUERY, {
+    fetchPolicy: "no-cache",
+  });
 
   useEffect(() => {
     const response = data?.anuncios as anuncioProps[];
     setAnuncios(response);
-  }, [data,anuncios]);
+  }, [data, anuncios]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
