@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { GET_ANUNCIOS_QUERY } from "../../../lib/anuncio";
+import { useEffect, useState } from "react";
 
 interface anuncioProps {
   id: string;
@@ -24,8 +25,13 @@ interface anuncioProps {
 }
 
 export const Home = () => {
+  const [anuncios, setAnuncios] = useState({} as anuncioProps[]);
   const { data } = useQuery<{ anuncios: anuncioProps[] }>(GET_ANUNCIOS_QUERY);
-  const anuncios = data?.anuncios;
+  
+  useEffect(() => {
+    const newAnuncios = data?.anuncios as anuncioProps[];
+    setAnuncios(newAnuncios)
+  }, [data])
 
   const navigate = useNavigate();
 
