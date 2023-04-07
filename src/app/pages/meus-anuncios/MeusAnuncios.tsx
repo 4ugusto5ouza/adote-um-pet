@@ -63,12 +63,12 @@ export const MeusAnuncios = () => {
     >
       {loading ? (
         <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>
-          Loading...
+          {"Loading..."}
         </Text>
       ) : (
         <>
           <Text fontSize={"24px"} fontWeight={"600"} marginBottom={"15px"}>
-            Meus anúncios
+            {"Meus anúncios"}
           </Text>
 
           <Flex
