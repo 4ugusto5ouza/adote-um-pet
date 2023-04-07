@@ -11,7 +11,7 @@ export const client = new ApolloClient({
     "Content-Type": "application/json",
     authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
   },
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({addTypename: false}),
 });
 
 export const GET_TODOS_QUERY = gql`
