@@ -25,13 +25,16 @@ interface anuncioProps {
 }
 
 export const Home = () => {
-  const [anuncios, setAnuncios] = useState({} as anuncioProps[]);
+  const [anuncios, setAnuncios] = useState([] as anuncioProps[]);
   const { data } = useQuery<{ anuncios: anuncioProps[] }>(GET_ANUNCIOS_QUERY);
-  
+
   useEffect(() => {
+    debugger;
     const newAnuncios = data?.anuncios as anuncioProps[];
-    setAnuncios(newAnuncios)
-  }, [data])
+    if (newAnuncios) {
+      setAnuncios(newAnuncios);
+    }
+  }, [data]);
 
   const navigate = useNavigate();
 
@@ -41,8 +44,8 @@ export const Home = () => {
         Publicações recentes
       </Text>
       <Grid templateColumns="repeat(4, 1fr)" gap={6}>
-        {anuncios &&
-          anuncios?.map((anuncio) => (
+        {anuncios.length > 0 &&
+          anuncios.map((anuncio) => (
             <GridItem w="100%" h="100%" bgColor={"#fdfdfd"} key={anuncio.id}>
               <Flex
                 border={"1px solid #bababa"}
